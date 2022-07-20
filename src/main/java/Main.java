@@ -4,10 +4,14 @@ public class Main {
         try {
             int i = 25 / 0;
         } catch (Exception e) {
-            
-            for (StackTraceElement element : stack) {
-                System.out.println(element);
+            if (checkCollection(stack)){
+                for (StackTraceElement element : stack) {
+                    System.out.println(element);
+                }
             }
         }
+    }
+    public static boolean checkCollection(StackTraceElement[] stack){
+        return stack != null;
     }
 }
